@@ -3,6 +3,7 @@
 import { Chip } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
+import ResponsiveAppBar from "./components/ResponsiveAppBar";
 
 const darkTheme = createTheme({
     palette: {
@@ -15,7 +16,7 @@ export default function Home() {
         <ThemeProvider theme={darkTheme}>
             <CssBaseline />
             <div>
-                <Chip label={"Todor And The World"} />
+                <ResponsiveAppBar />
             </div>
         </ThemeProvider>
     );
