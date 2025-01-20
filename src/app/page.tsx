@@ -1,23 +1,6 @@
 "use client";
+import Home from "./home/page";
 
-import { Chip } from "@mui/material";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { CssBaseline } from "@mui/material";
-import ResponsiveAppBar from "./components/ResponsiveAppBar";
-
-const darkTheme = createTheme({
-    palette: {
-        mode: "dark",
-    },
-});
-
-export default function Home() {
-    return (
-        <ThemeProvider theme={darkTheme}>
-            <CssBaseline />
-            <div>
-                <ResponsiveAppBar />
-            </div>
-        </ThemeProvider>
-    );
+export default function Page() {
+    return <Home />;
 }

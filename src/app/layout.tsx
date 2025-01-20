@@ -1,14 +1,19 @@
-import type { Metadata } from "next";
+"use client";
+
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { CssBaseline } from "@mui/material";
+import ResponsiveAppBar from "./components/ResponsiveAppBar";
 
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
-export const metadata: Metadata = {
-    title: "TodorAndTheWorld",
-    description: "TodorAndTheWorld",
-};
+const darkTheme = createTheme({
+    palette: {
+        mode: "dark",
+    },
+});
 
 export default function RootLayout({
     children,
@@ -17,7 +22,15 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body>{children}</body>
+            <body>
+                <ThemeProvider theme={darkTheme}>
+                    <CssBaseline />
+                    <div>
+                        <ResponsiveAppBar />
+                        {children}
+                    </div>
+                </ThemeProvider>
+            </body>
         </html>
     );
 }
